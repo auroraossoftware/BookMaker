@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-parchment: #fcf9f2;
+    --text-parchment: #2c251d;
+  }
+
+  body.theme-parchment {
+    background-color: #f7f2e7;
+    color: #2b251e;
+  }
+}
+
+/* Custom scrollbars for a polished authoring feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.5);
+}
+
+/* Print styling for native vector PDF generation via browser */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  @page {
+    size: auto;
+    margin: 20mm;
+  }
+}
+
+/* Book reader animations */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.book-shadow {
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.book-spine-shadow {
+  background: linear-gradient(to right, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 5%, rgba(0,0,0,0) 15%);
+}
